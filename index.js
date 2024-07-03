@@ -23,6 +23,10 @@ app.get('/course', (req, res) => {
   
 app.post('/course',(req,res)=>{
     console.log(req.body);
-    courses.push(req.body);
+    let singCor = {
+        id: courses.length+1,
+        name: req.body.name
+    }
+    courses.push(singCor);
     res.send("updated");
 })
